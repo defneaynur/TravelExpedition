@@ -1,4 +1,5 @@
 ﻿using Core.Config.Injection;
+using Core.Framework.Exceptions;
 using Newtonsoft.Json;
 using RestSharp;
 using TravelExpedition.Api.ServiceClient;
@@ -48,6 +49,13 @@ public class ApiRequestProcessor : IApiRequestProcessor
         var request = _CreateRestRequest(endpoint, apiKey, apiValue, model);
 
         RestResponse response = await client.ExecuteAsync(request);
+
+        if (response.Content == null)
+            throw new CoreNotificationException("Record Not Found");
+
+        if (response.ErrorException != null)
+            throw new CoreNotificationException(response.ErrorMessage, response.ErrorException);
+
         return _DeserializeResponse<T>(response.Content);
     }
 

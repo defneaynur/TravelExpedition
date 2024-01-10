@@ -33,7 +33,6 @@ public class OBiletApiSessionProcessor : IOBiletApiSessionProcessor
     /// <returns>The response containing session details.</returns>
     public async Task<SessionResponseModel> GetSession(SessionModel sessionModel)
     {
-
         return await _apiRequest.Execute<SessionResponseModel>("/api/client/getsession", sessionModel);
     }
 }

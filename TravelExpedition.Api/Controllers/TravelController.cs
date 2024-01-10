@@ -41,6 +41,7 @@ namespace TravelExpedition.Api.Controllers
         public async Task<CoreResponse<BusLocationsResponseModel>> GetBusLocations([FromBody] BusLocationsModel BusLocationsModel)
         {
             var response = _oBiletApiProcessor.GetBusLocations(BusLocationsModel);
+
             return new CoreResponse<BusLocationsResponseModel>
             {
                 ResponseCode = CoreResponseCode.Success,
