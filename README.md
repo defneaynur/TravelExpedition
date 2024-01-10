@@ -14,7 +14,7 @@ Bu proje, [OBilet API] üzerinden oturum yönetimi ve seyahat bilgileri almak i�
 - **HTTP Metodu:** POST
 - **Yol:** `/GetSession`
 - **Parametre:** `SessionModel`: Oturum modeli.
-- **Dönüş Değeri:** `Task<CoreResponse<SessionResponseModel>>`: Asenkron işlemi temsil eden bir görev, oturum yanıt modeliyle birlikte.
+- **Dönüş Değeri:** `Task<CoreResponse<SessionResponseModel>>`: Asenkron işlemi temsil eden bir görev, giriş yapan kullanıcı oturum bilgilerini döndürür.
 
 ## TravelController
 
@@ -28,7 +28,7 @@ Bu proje, [OBilet API] üzerinden oturum yönetimi ve seyahat bilgileri almak i�
 - **HTTP Metodu:** POST
 - **Yol:** `/GetBusLocations`
 - **Parametre:** `BusLocationsModel`: Otobüs konumları modeli.
-- **Dönüş Değeri:** `Task<CoreResponse<BusLocationsResponseModel>>`: Asenkron işlemi temsil eden bir görev, otobüs konumları yanıt modeliyle birlikte.
+- **Dönüş Değeri:** `Task<CoreResponse<BusLocationsResponseModel>>`: Asenkron işlemi temsil eden bir görev, otobus lokasyon bilgilerini döndürür.
 
 #### 2. `GetBusJourneys` Metodu
 
@@ -36,7 +36,7 @@ Bu proje, [OBilet API] üzerinden oturum yönetimi ve seyahat bilgileri almak i�
 - **HTTP Metodu:** POST
 - **Yol:** `/GetBusJourneys`
 - **Parametre:** `BusJourneysModel`: Otobüs seferleri modeli.
-- **Dönüş Değeri:** `Task<CoreResponse<BusJourneysResponseModel>>`: Asenkron işlemi temsil eden bir görev, otobüs seferleri yanıt modeliyle birlikte.
+- **Dönüş Değeri:** `Task<CoreResponse<BusJourneysResponseModel>>`: Asenkron işlemi temsil eden bir görev, verilen kriterlere göre otobüs seferleri bilgilerini döndürür.
 
 # Bağımlılıklar ve Kullanım
 
